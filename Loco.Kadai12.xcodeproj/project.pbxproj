@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38649B3C26A9513300AE89EA /* CalculateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38649B3B26A9513300AE89EA /* CalculateModel.swift */; };
 		38826C3926A937620084981F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38826C3826A937620084981F /* AppDelegate.swift */; };
 		38826C3B26A937620084981F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38826C3A26A937620084981F /* SceneDelegate.swift */; };
 		38826C3D26A937620084981F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38826C3C26A937620084981F /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38649B3B26A9513300AE89EA /* CalculateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModel.swift; sourceTree = "<group>"; };
 		38826C3526A937620084981F /* Loco.Kadai12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loco.Kadai12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38826C3826A937620084981F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38826C3A26A937620084981F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38649B3626A94FF200AE89EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38826C3C26A937620084981F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		38649B3726A9501300AE89EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38826C3E26A937620084981F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		38649B3826A9502A00AE89EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38649B3B26A9513300AE89EA /* CalculateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		38826C2C26A937620084981F = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +84,9 @@
 			children = (
 				38826C3826A937620084981F /* AppDelegate.swift */,
 				38826C3A26A937620084981F /* SceneDelegate.swift */,
-				38826C3C26A937620084981F /* ViewController.swift */,
-				38826C3E26A937620084981F /* Main.storyboard */,
+				38649B3826A9502A00AE89EA /* Model */,
+				38649B3726A9501300AE89EA /* View */,
+				38649B3626A94FF200AE89EA /* Controller */,
 				38826C4126A937650084981F /* Assets.xcassets */,
 				38826C4326A937650084981F /* LaunchScreen.storyboard */,
 				38826C4626A937650084981F /* Info.plist */,
@@ -77,6 +104,7 @@
 				38826C3126A937620084981F /* Sources */,
 				38826C3226A937620084981F /* Frameworks */,
 				38826C3326A937620084981F /* Resources */,
+				38826C4C26A94B350084981F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +160,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38826C4C26A94B350084981F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38826C3126A937620084981F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +188,7 @@
 				38826C3D26A937620084981F /* ViewController.swift in Sources */,
 				38826C3926A937620084981F /* AppDelegate.swift in Sources */,
 				38826C3B26A937620084981F /* SceneDelegate.swift in Sources */,
+				38649B3C26A9513300AE89EA /* CalculateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
