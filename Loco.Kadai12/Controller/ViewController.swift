@@ -5,17 +5,19 @@ class ViewController: UIViewController {
     @IBOutlet private weak var inputPriceTextField: UITextField!
     @IBOutlet private weak var inputTaxTextField: UITextField!
 
+    var token: NSObjectProtocol?
+
     private let calculateModel = CalculateModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(forName: .calculateNotice, object: nil, queue: OperationQueue.main, using: { [weak self] _ in self?.resultPriceDisplay()
+        token = NotificationCenter.default.addObserver(forName: .calculateNotice, object: nil, queue: OperationQueue.main, using: { [weak self] _ in self?.displayResultPrice()
         })
 
         inputTaxTextField.text = UserDefaults.standard.string(forKey: "tax")
     }
 
-    private func resultPriceDisplay() {
+    private func displayResultPrice() {
         priceLabel.text = "\(String(calculateModel.taxIncludedPrice!))円"
     }
 
