@@ -7,15 +7,17 @@ class ViewController: UIViewController {
 
     private let calculateModel = CalculateModel()
 
+    private var token: NSObjectProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(forName: .calculateNotice, object: nil, queue: OperationQueue.main, using: { [weak self] _ in self?.resultPriceDisplay()
+        token = NotificationCenter.default.addObserver(forName: .calculateNotice, object: nil, queue: OperationQueue.main, using: { [weak self] _ in self?.displayResultPrice()
         })
 
         inputTaxTextField.text = UserDefaults.standard.string(forKey: "tax")
     }
 
-    private func resultPriceDisplay() {
+    private func displayResultPrice() {
         priceLabel.text = "\(String(calculateModel.taxIncludedPrice!))円"
     }
 
