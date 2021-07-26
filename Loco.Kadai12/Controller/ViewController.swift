@@ -9,6 +9,8 @@ class ViewController: UIViewController {
 
     private let calculateModel = CalculateModel()
 
+    private var token: NSObjectProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         token = NotificationCenter.default.addObserver(forName: .calculateNotice, object: nil, queue: OperationQueue.main, using: { [weak self] _ in self?.displayResultPrice()
